@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" ng-app>
 
 <head>
   <meta charset="utf-8">
@@ -21,6 +21,8 @@
   
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.min.js"></script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -28,10 +30,31 @@
 <body class='bg-secondary'>
 
   <!-- Add your site or application content here -->
-  <h1>Welcome to Angular 101</h1>
-  <p>Hello world! This project has been built in : <b>HTML5 Boilerplate + Angular + Bootstrap + jQuery</b></p>
-  <p>This application is a simple artist search directory based on Angular JS</p>
-  
+  <div class="container mt-sm-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 card">
+          <div class="card-body">
+            <h2 class="card-title text-dark">Artist Directory</h2>
+
+              <div class="form-row mb-2">
+                <div class="col">
+                  <label class="col-form-label text-right" for="searchQuery">
+                    search {{ 'for : ' + query}}</label>
+                </div><!-- label -->
+                
+                <div class="col-12">
+                  <input class="form-control form-control-lg" id="searchQuery" 
+                  placeholder="Search for artists" 
+                  autofocus
+                  ng-model = "query"
+                  >
+                </div><!-- col-12 -->
+              </div><!-- form-row -->
+
+          </div><!-- card-body -->
+      </div><!-- col-12 -->
+    </div><!-- row -->
+  </div><!-- col-container -->
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
